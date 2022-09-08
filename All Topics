@@ -1,0 +1,367 @@
+// 9 . Inheritance 
+
+using System;
+
+class ClsBranch {
+   int Bcode;
+   string BName;
+   string BAddress;
+   
+   public void GetBranchData(){
+       Console.WriteLine("Enter Branch Details : ");
+       this.Bcode=Convert.ToInt32(Console.ReadLine());
+       this.BName=Console.ReadLine();
+       this.BAddress=Console.ReadLine();
+   }
+   public void DisplayBranchData(){
+       Console.WriteLine("Branch Details are : ");
+       Console.WriteLine("Branch Code is : "+this.Bcode);
+       Console.WriteLine("Branch Name is : "+this.BName);
+       Console.WriteLine("Branch Address is : "+this.BAddress);
+   }
+  }
+  class ClsEmployee5 : ClsBranch{
+      int EmpId;
+      string EName;
+      string EAddress;
+      int EAge;
+      
+      public void GetEmpData(){
+          Console.WriteLine("Enter Emp Deatail : ");
+          this.EmpId=Convert.ToInt32(Console.ReadLine());
+          this.EName=Console.ReadLine();
+          this.EAddress=Console.ReadLine();
+          this.EAge=Convert.ToInt32(Console.ReadLine());
+      }
+      public void DisplayEmpData(){
+          Console.WriteLine("Emp Details are: ");
+          Console.WriteLine("EmpId is : "+this.EmpId);
+          Console.WriteLine("Ename is : "+this.EName);
+          Console.WriteLine("EAddress is : "+this.EAddress);
+          Console.WriteLine("EAge is : "+this.EAge);
+      }
+  }
+  class ClsInheritance{
+      static void Main(string[] args){
+          ClsEmployee5 obj1 = new ClsEmployee5();
+          obj1.GetBranchData();
+          obj1.GetEmpData();
+          obj1.DisplayBranchData();
+          obj1.DisplayEmpData();
+          Console.Read();
+      }
+  }
+
+
+
+
+//8. Copy Constructor - Instance Constructor
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppBasics{
+    class ClsEmployee4{
+    int EmpId;
+    string EName;
+    string EAddress;
+    int EAge;
+    
+
+public ClsEmployee4(){
+            this.EmpId=3;
+            this.EName="Mr.Mall";
+            this.EAddress="Bangalore";
+            this.EAge=24;
+        }
+        
+public ClsEmployee4(ClsEmployee4 obj){
+    this.EmpId = obj.EmpId;
+    this.EName = obj.EName;
+    this.EAddress = obj.EAddress;
+    this.EAge = EAge;
+}
+        
+ public void DisplayData(){
+        Console.WriteLine("Employee Details :");
+        Console.WriteLine("EmpId is :"  +   this.EmpId);
+        Console.WriteLine("EName is :"  +   this.EName);
+        Console.WriteLine("EAddress is:"+   this.EAddress);
+        Console.WriteLine("EAge is:"    +   this.EAge+"\n");
+    }
+}
+  class ClsCopyconstructor{
+      static void Main(string[] args){
+          ClsEmployee4 obj1 = new ClsEmployee4();
+          ClsEmployee4 obj2 = new ClsEmployee4(obj1);
+          obj1.DisplayData();
+          obj2.DisplayData();
+          Console.Read();
+      }
+   } 
+}
+
+
+
+//7.Private Constructor - 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppBasics{
+    class ClsEmployee3{
+    int EmpId;
+    string EName;
+    string EAddress;
+    int EAge;
+    
+
+private ClsEmployee3(){
+            this.EmpId=3;
+            this.EName="Mr.Mall";
+            this.EAddress="Bangalore";
+            this.EAge=24;
+        }
+        
+        
+ private void DisplayData(){
+        Console.WriteLine("Employee Details :");
+        Console.WriteLine("EmpId is :"  +   this.EmpId);
+        Console.WriteLine("EName is :"  +   this.EName);
+        Console.WriteLine("EAddress is:"+   this.EAddress);
+        Console.WriteLine("EAge is:"    +   this.EAge+"\n");
+    }
+ 
+  class ClsParameter{
+      static void Main(string[] args){
+          ClsEmployee3 obj1 = new ClsEmployee3();
+          obj1.DisplayData();
+          Console.Read();
+      }
+   } 
+}
+}
+
+
+
+//6.  Constructure default and parameterized -
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppBasics{
+    class ClsEmployee2{
+    int EmpId;
+    string EName;
+    string EAddress;
+    int EAge;
+    
+public ClsEmployee2(int Id,String s1,string s2,int Ag){
+            this.EmpId=Id;
+            this.EName=s1;
+            this.EAddress=s2;
+            this.EAge=Ag;
+        }
+        
+public ClsEmployee2(){
+            this.EmpId=3;
+            this.EName="Mr.Mall";
+            this.EAddress="Bangalore";
+            this.EAge=24;
+        }
+        
+        
+        
+        public void DisplayData(){
+        Console.WriteLine("Employee Details :");
+        Console.WriteLine("EmpId is :"  +   this.EmpId);
+        Console.WriteLine("EName is :"  +   this.EName);
+        Console.WriteLine("EAddress is:"+   this.EAddress);
+        Console.WriteLine("EAge is:"    +   this.EAge+"\n");
+    }
+  }
+  class ClsParameter{
+      static void Main(string[] args){
+          ClsEmployee2 obj1 = new ClsEmployee2(1,"Sakshi","Bangalore",22);
+          ClsEmployee2 obj2 = new ClsEmployee2(2,"Rahul","Bangalore",24);
+          ClsEmployee2 obj3 = new ClsEmployee2();
+          obj1.DisplayData();
+          obj2.DisplayData();
+          obj3.DisplayData();
+          Console.Read();
+      }
+  }
+}
+
+
+
+//5 . Constructure - Userdefined
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppBasics{
+    class ClsEmployee1{
+    int EmpId;
+    string EName;
+    string EAddress;
+    int EAge;
+    
+        public ClsEmployee1(){
+            this.EmpId=111;
+            this.EName="xyz";
+            this.EAddress="Bengaluru";
+            this.EAge=24;
+        }
+        public void DisplayData(){
+        Console.WriteLine("Employee Details :");
+        Console.WriteLine("EmpId is :"  +   this.EmpId);
+        Console.WriteLine("EName is :"  +   this.EName);
+        Console.WriteLine("EAddress is:"+   this.EAddress);
+        Console.WriteLine("EAge is:"    +   this.EAge);
+    }
+  }
+  class ClsUDConstructor{
+      static void Main(string[] args){
+          ClsEmployee1 obj1 = new ClsEmployee1();
+          ClsEmployee1 obj2 = new ClsEmployee1();
+          ClsEmployee1 obj3 = new ClsEmployee1();
+          obj1.DisplayData();
+          obj2.DisplayData();
+          obj3.DisplayData();
+          Console.Read();
+      }
+  }
+}
+
+
+
+
+//4.Encapsulation 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class ClsEmployee{
+    int      EmpId;
+    string   EName;
+    string   EAddress;
+    int      EAge;
+    
+    public void GetData(){
+        Console.WriteLine("Enter Details:");
+        this.EmpId    = Convert.ToInt32(Console.ReadLine());
+        this.EName    = Console.ReadLine();
+        this.EAddress = Console.ReadLine();
+        this.EAge     = Convert.ToInt32(Console.ReadLine());
+    }
+    
+    public void DisplayData(){
+        Console.WriteLine("Employee Details :");
+        Console.WriteLine("EmpId is :"  +   this.EmpId);
+        Console.WriteLine("EName is :"  +   this.EName);
+        Console.WriteLine("EAddress is:"+   this.EAddress);
+        Console.WriteLine("EAge is:"    +   this.EAge);
+    }
+  }
+  class ClsEncapsulate{
+  static void Main(string[] args){
+        ClsEmployee obj1=new ClsEmployee();
+        obj1.GetData();
+        obj1.DisplayData();
+        Console.Read();
+      }
+  }
+
+
+
+
+
+//  3.  2D Arrays in C#.Net
+
+using System;
+class HelloWorld {
+  static void Main() {
+    Console.WriteLine("Hello World");
+    int[,] a=new int[3,3]{{1,2,3},{4,5,6},{7,8,9}};
+    for(int r=0;r<3;r++){
+    for(int c=0;c<3;c++){
+        Console.Write(a[r,c]+" ");
+    }
+    Console.WriteLine();
+        
+    }    
+  }
+}
+
+
+
+
+
+//  2. Array in C#.Net
+
+
+using System;
+//namespace MyApplication{
+class HelloWorld {
+    static void Main(String []args) {
+    Console.WriteLine("Hello World");
+    
+    
+    
+    int[] arr=new int[4]{10,20,30,40};
+    for(int i=0;i<4;i++){
+    Console.Write(arr[i]+"\n");
+    }
+    
+    
+    string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+      foreach (string i in cars) 
+      {
+        Console.WriteLine(i);
+      }   
+   // Console.Read();
+  }
+}
+//}
+
+
+
+
+
+//  1. Normal Calculation in c#.Net
+
+
+using System;
+    class main{
+        static void Main(){
+            int n=8;
+            int m=5;
+            Console.Write("Hello world\n");
+            Console.Write(n+m+"\n");
+            Console.Write(n*m+"\n");
+            Console.WriteLine(n/m);
+            Console.Write(n%m+"\n");
+        }
+    
+}
+
+
+
+//c#.Net Compiler -
+//https://www.onlinegdb.com/online_csharp_compiler
